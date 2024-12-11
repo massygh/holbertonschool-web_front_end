@@ -1,0 +1,16 @@
+/* Définition des styles de base */
+.info {
+    font-size: 12px;
+  }
+  
+  /* Extending .info pour les autres classes */
+  .success {
+    @extend .info;
+    color: #00FF00;
+  }
+  
+  .warning {
+    @extend .info;
+    color: #FF0000;
+  }
+  

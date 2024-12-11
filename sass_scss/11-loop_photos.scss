@@ -1,0 +1,9 @@
+/* Importation des noms */
+@import '11-photos';
+
+/* Boucle pour créer des classes */
+@each $name in $list-names {
+  .photo-#{$name} {
+    background: image-url("photos/#{$name}.jpg") no-repeat;
+  }
+}

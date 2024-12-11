@@ -1,0 +1,15 @@
+/* Définition du mixin pour les marges */
+@mixin margin-x($left, $right) {
+    margin-left: $left;
+    margin-right: $right;
+  }
+  
+  /* Application des marges avec le mixin */
+  body {
+    @include margin-x(10px, 10px);
+  }
+  
+  div {
+    @include margin-x(15px, 15px);
+  }
+  
