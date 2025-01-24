@@ -1,0 +1,14 @@
+/* Section Latest news ============================= */
+.section-latest-news .row {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  
+  /*** 4. CARD ***/
+  .card {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 5px;
+    background-color: #f9f9f9;
+  }
+  
