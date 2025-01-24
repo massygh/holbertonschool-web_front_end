@@ -1,0 +1,13 @@
+/* Grid */
+.row {
+    display: flex;
+  }
+  
+  [class*='col-'] {
+    /* Removed float: left; */
+    padding: 10px;
+    border: 1px solid #000;
+  }
+  
+  /* Removed the row::after declaration */
+  
