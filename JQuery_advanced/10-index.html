@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>10. Another Get API</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+  <script>
+    function addPostRow(data) {
+      const $p = $('<p>');
+      const $span = $('<span>').text(`Post created with id ${data.id}, title: ${data.title}, author: ${data.author}`);
+      $p.append($span);
+      $('body').append($p);
+    }
+
+    function listPosts() {
+      $.get('http://localhost:3000/posts')
+        .done(function (data) {
+          data.forEach(post => {
+            addPostRow(post);
+          });
+        })
+        .fail(function () {
+          alert('Server Error');
+        });
+    }
+
+    $(document).ready(function () {
+      listPosts();
+    });
+  </script>
+</body>
+</html>
