@@ -1,26 +1,21 @@
-/* Placeholder styles for the new section classes */
+/* Grid section */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+}
 
-.section-services {
-    /* Style for Services section */
-  }
-  
-  .section-works {
-    /* Style for Works section */
-  }
-  
-  .section-about-us {
-    /* Style for About Us section */
-  }
-  
-  .section-latest-news {
-    /* Style for Latest News section */
-  }
-  
-  .section-testimonial {
-    /* Style for Testimonial section */
-  }
-  
-  .section-contact {
-    /* Style for Contact section */
-  }
-  
+[class*='col-'] {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.col-1-2 {
+  width: calc((100% / 2) - 2rem);
+  margin: 1rem;
+}
+
+.col-1-3 {
+  width: calc((100% / 3) - 2rem);
+  margin: 1rem;
+}

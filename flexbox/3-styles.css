@@ -1,21 +1,33 @@
+/* Grid section */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+}
+
+[class*='col-'] {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.col-1-2 {
+  width: calc((100% / 2) - 2rem);
+  margin: 1rem;
+}
+
+.col-1-3 {
+  width: calc((100% / 3) - 2rem);
+  margin: 1rem;
+}
+
+/* Section Latest news ============================= */
+.section-latest-news .row {
+  flex-direction: row-reverse;
+}
+
+/*** 4. CARD ***/
+
 /* Section SERVICES ============================= */
 .section-services .row {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  
-  .section-services ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    gap: 10px; /* Adds space between list items */
-  }
-  
-  .section-services li {
-    background: #f3f3f3;
-    padding: 10px 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
+  flex-wrap: wrap;
+}
