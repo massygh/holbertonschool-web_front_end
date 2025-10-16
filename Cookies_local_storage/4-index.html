@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Task 4 - js-cookie</title>
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
+</head>
+<body>
+  <div id="login-form">
+    <h2>Login</h2>
+    <input type="text" id="firstname" placeholder="Firstname">
+    <input type="text" id="email" placeholder="Email">
+    <button onclick="setCookiesAndShowWelcomeMessage()">Log me in</button>
+  </div>
+
+  <script>
+    function deleteCookiesAndShowForm() {
+      Cookies.remove('firstname');
+      Cookies.remove('email');
+      showForm();
+    }
+
+    function showForm() {
+      document.body.innerHTML = document.getElementById('login-form').outerHTML;
+    }
+
+    function setCookiesAndShowWelcomeMessage() {
+      const firstname = document.getElementById('firstname').value;
+      const email = document.getElementById('email').value;
+      Cookies.set('firstname', firstname, { expires: 10, path: '/' });
+      Cookies.set('email', email, { expires: 10, path: '/' });
+      showWelcomeMessageOrForm();
+    }
+
+    function showWelcomeMessageOrForm() {
+      const firstname = Cookies.get('firstname');
+      if (firstname) {
+        document.body.innerHTML = "";
+        const h1 = document.createElement("h1");
+        h1.innerHTML = `Welcome ${firstname}`;
+        const logout = document.createElement("a");
+        logout.href = "#";
+        logout.innerText = " (logout)";
+        logout.style.fontStyle = "italic";
+        logout.style.marginLeft = "10px";
+        logout.onclick = function () {
+          deleteCookiesAndShowForm();
+          return false;
+        };
+        h1.appendChild(logout);
+        document.body.appendChild(h1);
+      } else {
+        showForm();
+      }
+    }
+
+    showWelcomeMessageOrForm();
+  </script>
+</body>
+</html>
